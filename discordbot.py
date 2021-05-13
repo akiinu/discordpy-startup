@@ -17,6 +17,12 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send("pong")
     
+async def on_message(message):
+    if message.content.startswith("!ちんぽ"): #ここの!diceは好きなのにしていいぞ
+        if client.user != message.author:
+            num_random = random.randrange(1,20)
+            m = str(num_random)
+            await client.send_message(message.channel, m)
 
     
 
